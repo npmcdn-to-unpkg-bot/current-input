@@ -3,41 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Current Input Test</title>
+    <title>Current Input</title>
+    <style>html{background-color: #F0F0F0;}</style>
     <style media="screen">
-      body {
-        height: 50vh;
-        border: 2px solid #B6E3ED;
-      }
-      div {
-        font-size: 30px;
-      }
-      .current-input-mouse div {
-        color: yellow;
-      }
-      .current-input-mouse div:hover {
-        color: green;
-      }
-      .current-input-mouse div:active {
-        color: red;
-      }
-      .current-input-touch div {
-        color: orange;
-      }
-      .current-input-touch div:active {
-        color: blue;
-      }
 
-      .no-select {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
     </style>
+    <link rel="stylesheet" href="/index.css">
     <script src="https://npmcdn.com/current-input/dist/CurrentInput.min.js"></script>
   </head>
   <body>
-    <div class="no-select">hello world</div>
+    <div id="root">
+      <div>
+        <h1>Current Input</h1>
+        <div><a class="repo-link" href="https://github.com/rafrex/current-input" target="_blank">https://github.com/rafrex/current-input</a></div>
+        <h3>The current input type is: <code class="mouse-type">mouse</code><code class="touch-type">touch</code></h3>
+
+        <h2>Standard CSS</h2>
+        <div class="plain-css-example">Hover is green. Active is red.</div>
+        <p><code>:hover</code> and <code>:active</code> pseudo-classes applied normally. Suffers from the sitcky hover problem on touch devices.</p>
+
+        <h2>CSS with <code>current-input</code></h2>
+        <div class="current-input-example">Hover is green. Active is red. Touch active is blue.</div>
+        <p>
+          <code>:hover</code> and <code>:active</code> (red) pseudo-classes applied if <code>current-input-mouse</code> class is present.
+          <code>:active</code> (blue) pseudo-class applied if <code>current-input-touch</code> class is present. Fixes the sticky hover problem on touch devices and creates 3 interactive states.
+        </p>
+
+        <div><a class="extended-link" href="http://www.rafaelpedicini.com" target="_blank">Code and concept by <span>Rafael Pedicini</span></a></div>
+      </div>
+    </div>
   </body>
 </html>
