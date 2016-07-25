@@ -3,3 +3,8 @@
 
 # Dependency directory
 node_modules
+
+# Master branch directories
+src
+lib
+dist
